@@ -1,8 +1,8 @@
 // src/App.jsx
 
-import Header from './Header';      // Import Header
-import MainContent from './MainContent';  // Import MainContent
-import Footer from './Footer';      // Import Footer
+import Header from './components/Header';      // Import Header
+import MainContent from './components/MainContent';  // Import MainContent
+import Footer from './components/Footer';      // Import Footer
 
 function App() {
   return (
