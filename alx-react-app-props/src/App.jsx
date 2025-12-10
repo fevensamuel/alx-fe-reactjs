@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfilePage from './ProfilePage';
+ HEAD
 import UserContext from './UserContext'; // Import the UserContext
 
 import Header from './components/Header';
@@ -21,6 +22,15 @@ function App() {
       <Footer />
     </div>
 <UserContext.Provider value={userData}> {/* Provide the userData through Context */}
+
+import UserContext from './UserContext';
+
+function App() {
+  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+
+  return (
+    <UserContext.Provider value={userData}>
+ 0057018c8ea55e211233504273713108e6ee3e7b
       <ProfilePage />
     </UserContext.Provider>
   );
