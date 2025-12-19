@@ -1,13 +1,7 @@
-// src/UserInfo.jsx
-import React, { useContext } from 'react';
-import UserDetails from './UserDetails'; // Import UserDetails component
-import UserContext from './UserContext'; // Import the context
+import UserProfile from './UserProfile';
 
 function UserInfo() {
-  // Consume context to access the userData
-  const userData = useContext(UserContext);
-
-  return <UserDetails userData={userData} />;
+  return <UserProfile />;
 }
 
 export default UserInfo;
