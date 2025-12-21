@@ -2,8 +2,12 @@ import axios from "axios";
 
 const BASE_URL = "https://api.github.com/search/users?q=";
 
-export const searchUsers = async ({ username, location, minRepos, page = 1 }) => {
+export const fetchUserData = async (username) => {
+  const response = await axios.get(`https://api.github.com/users/${username}`);
+  return response.data;
+};
 
+export const searchUsers = async ({ username, location, minRepos, page = 1 }) => {
   let query = username || "";
 
   if (location) {
@@ -18,7 +22,6 @@ export const searchUsers = async ({ username, location, minRepos, page = 1 }) =>
 
   const response = await axios.get(apiUrl);
 
-  // Fetch full user details (repos, location not in search results)
   const usersWithDetails = await Promise.all(
     response.data.items.map(async (user) => {
       const userDetails = await axios.get(user.url);
